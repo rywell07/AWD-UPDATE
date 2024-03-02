@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://image.freepik.com/free-vector/violet-blue-neon-lights-dark-background_23-2148676578.jpg');
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(130, 128, 247);
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow */
+    background-color: #2d046383; /* Add background color */
+    padding: 0.5rem 1rem; /* Add padding */
+    border-radius: 0.5rem; /* Add border radius */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add box shadow */
+}
+
+.cardHolder {
+    display: grid;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 90%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 1rem;
+}
+
+.card {
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background: linear-gradient(
+        45deg,
+        #351885 0%,
+        #5d34ee 42%,
+        #4a93f3 42%,
+        #290844 45%,
+        #351885 45%,
+        #351885 48%,
+        #ffffff 48%,
+        #ffffff 51%,
+        #351885 51%,
+        #351885 54%,
+        #ffffff 54%,
+        #ffffff 57%,
+        #351885 57%,
+        #351885 60%,
+        #ffffff 60%,
+        #ffffff 100%
+    );
+    background-size: 300%;
+    box-shadow: 2px 3px 5px white;
+    transition: 0.5s ease-in-out;
+}
+
+.cardTitle {
+    color: white;
+    transition: 0.3s ease-in-out;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.card:hover {
+    animation: colorChange 0.3s ease-in-out;
+    box-shadow: 3px 5px 5px #327be9;
+    background-position: 100%;
+}
+
+.card:hover .cardTitle {
+    color: #318bf3;
+    font-weight: 700;
+}
+
+@keyframes colorChange {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
