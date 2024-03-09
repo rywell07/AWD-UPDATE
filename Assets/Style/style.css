@@ -4,12 +4,11 @@
     padding: 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('https://image.freepik.com/free-vector/violet-blue-neon-lights-dark-background_23-2148676578.jpg');
-    min-height: 100vh;
+    font-family: 'Press Start 2P', cursive;
+    background-image: url('https://th.bing.com/th/id/R.3a2de183a39ac34e525a764a525e66e6?rik=BizmSwzJMqI9LA&riu=http%3a%2f%2fhdqwalls.com%2fwallpapers%2fpacman-256-b2.jpg&ehk=VpXr6SW9VxGbhaco3jbJ9bc2dF%2bRflorM360JyyWGmg%3d&risl=&pid=ImgRaw&r=0');
 }
 
 .container {
@@ -22,16 +21,26 @@ body {
 }
 
 .title {
+    font-family: 'Press Start 2P', cursive;
     font-size: 1.5rem;
     font-weight: 700;
-    color: rgb(130, 128, 247);
+    color: #eebb24; /* Pacman yellow color */
     margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow */
-    background-color: #2d046383; /* Add background color */
-    padding: 0.5rem 1rem; /* Add padding */
-    border-radius: 0.5rem; /* Add border radius */
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add box shadow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 
+                 -2px -2px 4px rgba(0, 0, 0, 0.5); /* Border effect */
+    background-color: #11050c54; /* Pacman blue color with opacity */
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+.title:hover {
+    color: #0300ff82; /* Change text color on hover */
+    background-color: #ffcf40; /* Change background color on hover */
+}
+
+
+
 
 .cardHolder {
     display: grid;
@@ -40,53 +49,78 @@ body {
     width: 90%;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     padding: 1rem;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .card {
     border-radius: 0.5rem;
     padding: 1rem;
-    background: linear-gradient(
-        45deg,
-        #351885 0%,
-        #5d34ee 42%,
-        #4a93f3 42%,
-        #290844 45%,
-        #351885 45%,
-        #351885 48%,
-        #ffffff 48%,
-        #ffffff 51%,
-        #351885 51%,
-        #351885 54%,
-        #ffffff 54%,
-        #ffffff 57%,
-        #351885 57%,
-        #351885 60%,
-        #ffffff 60%,
-        #ffffff 100%
-    );
-    background-size: 300%;
+    background: radial-gradient(circle at 10% 50%, #ffcf409a 0%, #ffcf40a1 70%, #000000ab 71%, #000000 100%);
     box-shadow: 2px 3px 5px white;
-    transition: 0.5s ease-in-out;
-}
-
-.cardTitle {
-    color: white;
-    transition: 0.3s ease-in-out;
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Added border-color transition */
+    border: 2px solid transparent; /* Added border */
 }
 
 .card:hover {
-    animation: colorChange 0.3s ease-in-out;
-    box-shadow: 3px 5px 5px #327be9;
-    background-position: 100%;
+    transform: scale(1.05);
+    box-shadow: 3px 5px 5px #d0ff00;
+    border-color: #ffcf40; /* Border color on hover */
+}
+
+.cardTitle {
+    font-family: 'Press Start 2P', cursive;
+    color: #cff03c; /* Lighter shade color */
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px 1px 0 #000,
+         1px 1px 0 #000; /* Black border effect */
+    transition: color 0.3s ease-in-out;
+}
+
+
+.description {
+    color: #f0f0f0; /* Lighter shade color */
+    text-shadow: 1px 1px 2px #000, 
+                 -1px -1px 2px #000, 
+                 1px -1px 2px #000, 
+                 -1px 1px 2px #000; /* Border effect */
+}
+
+
+.cardTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #ffcf40; /* Pacman yellow color */
+    transition: transform 0.3s ease-in-out; /* Smooth transform transition */
+    transform: scaleX(0);
+    transform-origin: right;
+    
 }
 
 .card:hover .cardTitle {
-    color: #318bf3;
-    font-weight: 700;
+    color: #000; /* Change title color on hover */
+    text-shadow: 
+        -1px -1px 0 #ffffff,  
+         1px -1px 0 #ffffff,
+        -1px 1px 0 #ffffff,
+         1px 1px 0 #ffffff; 
 }
+
+.card:hover .cardTitle::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
 
 @keyframes colorChange {
     0% {
