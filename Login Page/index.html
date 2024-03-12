@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Assets/Styles/styles.css">
+    <title>Sign Up</title>
+</head>
+<body>
+
+    <div class="background"></div>
+    <div id="signup-form">
+        <div class="backofsignup">
+            <h2>Sign Up</h2>.
+            <form id="signup-form" class="signback">
+
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" required oninput="animateInput(this)">
+
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" required oninput="animateInput(this)">
+
+                <label for="phone-number">Phone Number:</label>
+                <input type="tel" id="phone-number" required oninput="animateInput(this)">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required oninput="animateInput(this)">
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" required oninput="animateInput(this)">
+
+                <button type="button" onclick="signup()">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="Assets/JS/script.js"></script>
+</body>
+</html>

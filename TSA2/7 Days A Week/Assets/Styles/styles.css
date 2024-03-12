@@ -1,0 +1,184 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;   
+    margin: 0;
+    background: url('../Pictures/qw.gif') center center fixed;
+    background-size: cover;
+  }
+  
+  #buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the buttons vertically */
+    position: fixed;
+    left: 10px; /* Fixed position on the left */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+  }
+  
+  button {
+    margin-bottom: 20px;
+    color: white;
+    border: 2px solid black;
+    padding: 12px 16px; /* Increase padding to make the buttons larger */
+    font-size: 16px; /* Increase font size */
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .button-Monday {
+    background-color: red;
+    border-color: red;
+  }
+  
+  .button-Tuesday {
+    background-color: blue;
+    border-color: blue;
+  }
+  
+  .button-Wednesday {
+    background-color: green;
+    border-color: green;
+  }
+  
+  .button-Thursday {
+    background-color: yellow;
+    border-color: yellow;
+  }
+  
+  .button-Friday {
+    background-color: black;
+    border-color: black;
+  }
+  
+  .button-Saturday {
+    background-color: pink;
+    border-color: pink;
+  }
+  
+  .button-Sunday {
+    background-color: purple;
+    border-color: purple;
+  }
+  
+  button:hover {
+    filter: brightness(90%); /* Darken the button on hover */
+  }
+  
+  .box {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0; /* Set default opacity to 0 */
+    border: 5px solid transparent; /* Transparent border for each box */
+    background-color: transparent; /* Transparent body */
+  }
+
+  @keyframes fadeInFromTop {
+    0% {
+      transform: translate(-50%, -100%) scale(1);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOutToTop {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -100%) scale(1);
+      opacity: 0;
+    }
+  }
+  
+  #box-Monday {
+    border-color: red; /* Colored border for Monday */
+  }
+  
+  #box-Tuesday {
+    border-color: blue; /* Colored border for Tuesday */
+  }
+  
+  #box-Wednesday {
+    border-color: green; /* Colored border for Wednesday */
+  }
+  
+  #box-Thursday {
+    border-color: yellow; /* Colored border for Thursday */
+  }
+  
+  #box-Friday {
+    border-color: black; /* Colored border for Friday */
+  }
+  
+  #box-Saturday {
+    border-color: pink; /* Colored border for Saturday */
+  }
+  
+  #box-Sunday {
+    border-color: purple; /* Colored border for Sunday */
+  }
+  
+  #box-Monday.active {
+    animation: fadeInFromTop 0.5s ease-in-out;
+  }
+  
+  #box-Tuesday.active {
+    animation: fadeInFromTop 0.5s ease-in-out;
+  }
+  
+  #box-Wednesday.active {
+    animation: fadeInFromTop 0.5s ease-in-out;
+  }
+  
+  #box-Thursday.active {
+    animation: fadeInFromTop 0.5s ease-in-out;
+  }
+  
+  #box-Friday.active {
+    animation: fadeInFromTop 0.5s ease-in-out;
+  }
+  
+  #box-Saturday.active {
+    animation: fadeInFromTop 0.5s ease-in-out;
+  }
+  
+  #box-Sunday.active {
+    animation: fadeInFromTop 0.5s ease-in-out;
+  }
+
+#box-Monday.exit,
+#box-Tuesday.exit,
+#box-Wednesday.exit,
+#box-Thursday.exit,
+#box-Friday.exit,
+#box-Saturday.exit,
+#box-Sunday.exit {
+  animation: fadeOutToTop 0.5s ease-in-out;
+}
+  
+  #box-Monday.active,
+  #box-Tuesday.active,
+  #box-Wednesday.active,
+  #box-Thursday.active,
+  #box-Friday.active,
+  #box-Saturday.active,
+  #box-Sunday.active {
+    transform: translate(-50%, -50%) scale(1);
+    border-color: transparent;
+    opacity: 1;
+  }
+  
+  
