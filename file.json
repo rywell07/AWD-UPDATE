@@ -12,12 +12,12 @@
     {
         "title": "Calculator",
         "description": "A simple calculator that helps you with simple mathematics.",
-        "link": "./Calculator"
+        "link": "./TSA3/Calculator"
     },
     {
         "title": "7 Days A Week",
         "description": "7 buttons that is clickable that will change the color of the current bosex on the webpage.",
-        "link": "./7 Days A Week"
+        "link": "./TSA2/7 Days A Week"
     },
     {
         "title": "Resto Web",
